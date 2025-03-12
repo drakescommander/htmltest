@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目详情 - 上海城市建设项目</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            color: #555;
+        }
+        .section p, .section ul {
+            margin: 10px 0;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section ul li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 4px;
+        }
+        .back-button {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007BFF;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>项目详情 - 智慧城市建设项目</h1>
+
+        <!-- 基本信息 -->
+        <div class="section">
+            <h2>基本信息</h2>
+            <p><strong>项目编号:</strong> P002</p>
+            <p><strong>项目名称:</strong> 上海城市建设项目</p>
+            <p><strong>项目地址:</strong> 北京市朝阳区</p>
+            <p><strong>首次接洽日期:</strong> 2023-03-15</p>
+            <p><strong>项目体量:</strong> 5亿</p>
+            <p><strong>紧急程度:</strong> 高</p>
+            <p><strong>投资方:</strong> 国家开发投资公司</p>
+            <p><strong>设计方:</strong> 中国建筑设计研究院</p>
+            <p><strong>机电总包:</strong> 中建三局</p>
+            <p><strong>顾问公司:</strong> 麦肯锡咨询</p>
+        </div>
+
+        <!-- 联系人信息 -->
+        <div class="section">
+            <h2>联系人</h2>
+            <ul>
+                <li>
+                    <strong>姓名:</strong> 张三<br>
+                    <strong>电话:</strong> 13800138000<br>
+                    <strong>职务:</strong> 项目经理<br>
+                    <strong>地址:</strong> 北京市朝阳区XX大厦
+                </li>
+                <li>
+                    <strong>姓名:</strong> 李四<br>
+                    <strong>电话:</strong> 13900139000<br>
+                    <strong>职务:</strong> 技术总监<br>
+                    <strong>地址:</strong> 上海市浦东新区XX中心
+                </li>
+                <li>
+                    <strong>姓名:</strong> 张三<br>
+                    <strong>电话:</strong> 13800138000<br>
+                    <strong>职务:</strong> 项目经理<br>
+                    <strong>地址:</strong> 北京市朝阳区XX大厦
+                </li>
+            </ul>
+        </div>
+
+        <!-- 品牌范围 -->
+        <div class="section">
+            <h2>品牌范围</h2>
+            <p>智慧交通、物联网设备</p>
+        </div>
+
+        <!-- 项目评价及分析 -->
+        <div class="section">
+            <h2>项目评价及分析</h2>
+            <p>国家级重点示范项目，政府支持力度大</p>
+        </div>
+
+        <!-- 图纸内容及进展 -->
+        <div class="section">
+            <h2>图纸内容及进展</h2>
+            <p>已完成初步设计图纸</p>
+        </div>
+
+        <!-- 项目跟进记录 -->
+        <div class="section">
+            <h2>项目跟进记录</h2>
+            <ul>
+                <li>
+                    <strong>日期:</strong> 2023-04-01<br>
+                    <strong>方式:</strong> 会议<br>
+                    <strong>接触人员:</strong> 王五<br>
+                    <strong>进展:</strong> 确定初步方案
+                </li>
+                <li>
+                    <strong>日期:</strong> 2023-05-10<br>
+                    <strong>方式:</strong> 电话<br>
+                    <strong>接触人员:</strong> 赵六<br>
+                    <strong>进展:</strong> 确认设备清单
+                </li>
+            </ul>
+        </div>
+
+        <!-- 返回按钮 -->
+        <a href="searchpage.html" class="back-button">返回搜索页面</a>
+    </div>
+</body>
+<!-- 在原有的HTML文件尾部添加以下代码 -->
+<script>
+// 可编辑区域选择器（根据实际需要调整）
+const EDITABLE_SELECTOR = '.section p, .section li';
+
+// 初始化编辑状态
+let isEditing = false;
+
+// 添加操作按钮
+const buttonContainer = document.createElement('div');
+buttonContainer.className = 'action-buttons';
+buttonContainer.innerHTML = `
+    <button class="edit-btn">修改</button>
+    <button class="save-btn" disabled>保存</button>
+`;
+document.querySelector('.container').prepend(buttonContainer);
+
+// 获取按钮元素
+const editBtn = document.querySelector('.edit-btn');
+const saveBtn = document.querySelector('.save-btn');
+
+// 修改按钮点击事件
+editBtn.addEventListener('click', () => {
+    isEditing = !isEditing;
+    toggleEditing(isEditing);
+    editBtn.textContent = isEditing ? '取消编辑' : '修改';
+    saveBtn.disabled = !isEditing;
+});
+
+// 保存按钮点击事件
+saveBtn.addEventListener('click', () => {
+    const changes = collectChanges();
+    localStorage.setItem('projectData', JSON.stringify(changes));
+    alert('保存成功！');
+    toggleEditing(false);
+    editBtn.textContent = '修改';
+    saveBtn.disabled = true;
+});
+
+// 切换编辑状态
+function toggleEditing(enable) {
+    document.querySelectorAll(EDITABLE_SELECTOR).forEach(el => {
+        el.contentEditable = enable;
+        el.style.backgroundColor = enable ? '#fff3d6' : '';
+        el.style.border = enable ? '1px dashed #ffc107' : 'none';
+    });
+}
+
+// 收集修改内容
+function collectChanges() {
+    const data = {};
+    document.querySelectorAll(EDITABLE_SELECTOR).forEach((el, index) => {
+        data[`item-${index}`] = el.innerHTML;
+    });
+    return data;
+}
+
+// 加载保存的数据
+function loadSavedData() {
+    const savedData = localStorage.getItem('projectData');
+    if (savedData) {
+        const data = JSON.parse(savedData);
+        document.querySelectorAll(EDITABLE_SELECTOR).forEach((el, index) => {
+            if (data[`item-${index}`]) {
+                el.innerHTML = data[`item-${index}`];
+            }
+        });
+    }
+}
+
+// 页面加载时检查保存数据
+window.addEventListener('load', loadSavedData);
+</script>
+
+<style>
+/* 添加按钮样式 */
+.action-buttons {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.edit-btn, .save-btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-btn {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.save-btn {
+    background-color: #28a745;
+    color: white;
+    margin-left: 1rem;
+}
+
+.edit-btn:hover {
+    background-color: #e0a800;
+}
+
+.save-btn:hover {
+    background-color: #218838;
+}
+
+/* 编辑状态样式 */
+[contenteditable="true"] {
+    min-height: 1.5em;
+    outline: none;
+}
+</style>
+</html>

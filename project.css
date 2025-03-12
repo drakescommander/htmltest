@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+/* 添加以下样式 */
+.fixed-label {
+    font-weight: bold;
+    color: #333;
+    display: inline-block;
+    min-width: 120px;
+    user-select: none;
+}
+
+.editable-content {
+    display: inline-block;
+    padding: 2px 5px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+.editing-mode {
+    background-color: #fff3d6 !important;
+    border: 1px dashed #ffc107 !important;
+    padding: 5px 8px !important;
+}
+
+.action-buttons {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.edit-btn, .save-btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-btn {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.save-btn {
+    background-color: #28a745;
+    color: white;
+    margin-left: 1rem;
+}
+
+/* 保持原有其他样式不变... */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+    :root {
+        --primary-bg: #f4f4f4;
+        --container-bg: #fff;
+        --text-dark: #333;
+        --text-medium: #555;
+        --accent-color: #007BFF;
+        --hover-accent: #0056b3;
+        --item-bg: #f9f9f9;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: var(--primary-bg);
+        margin: 0;
+        padding: 20px;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: var(--container-bg);
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        text-align: center;
+        color: var(--text-dark);
+        margin-bottom: 2rem;
+        font-size: 2.2rem;
+    }
+
+    .section {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        background: var(--container-bg);
+        border: 1px solid #eee;
+        border-radius: 6px;
+    }
+
+    .section h2 {
+        border-bottom: 2px solid var(--text-dark);
+        padding-bottom: 0.5rem;
+        color: var(--text-medium);
+        margin: 0 0 1rem;
+        font-size: 1.4rem;
+    }
+
+    .section p,
+    .section ul {
+        margin: 0.8rem 0;
+        color: #666;
+    }
+
+    .section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .section li {
+        background: var(--item-bg);
+        padding: 0.8rem 1.2rem;
+        margin: 0.5rem 0;
+        border-radius: 4px;
+        transition: transform 0.2s ease;
+    }
+
+    .section li:hover {
+        transform: translateX(5px);
+    }
+
+    .back-button {
+        display: inline-block;
+        text-align: center;
+        margin: 2rem auto 0;
+        padding: 0.8rem 2rem;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #fff;
+        background-color: var(--accent-color);
+        transition: all 0.3s ease;
+        width: fit-content;
+    }
+
+    .back-button:hover {
+        background-color: var(--hover-accent);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding: 1rem;
+            margin: 10px;
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+        }
+        
+        .section {
+            padding: 0.8rem;
+        }
+    }
